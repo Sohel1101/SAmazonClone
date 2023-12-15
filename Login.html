@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("https://images.unsplash.com/photo-1543837173-6c26bc89937b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MnxKVTJ1d0JiT3NPSXx8ZW58MHx8fHx8");
+    background-repeat: no-repeat;
+    background-position: fixed;
+    background-size: 100% 100vh;
+}
+
+form{
+    background-color: black;
+    border: 1px solid black;
+    height: 300px;
+    width: 250px;
+    text-align: center;
+    color: wheat;
+}
+
+form input{
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid red;
+    background: transparent;
+    color: white;
+}
+
+
+form button{
+    background-color: orange;
+    border: 1px solid orange;
+    padding: 8px 20px 8px 20px;
+    margin: 10px;
+}
+    </style>
+</head>
+<body>
+    <section>
+        <form action="">
+            <h1 style="color: wheat; margin: 10px;"> Login here</h1>
+            <input type="email" name="" id="em" placeholder="Enter your email">
+            <input type="password" name="" id="pass" placeholder="Enter your password">
+            <button id="login">Login</button>
+            <div>Don't have an account <a href="./index.html">SignUp here</a></div>
+        </form>
+    </section>
+    
+    <script>
+        let a = document.getElementById('login')
+        a.addEventListener('click',()=>{
+            let Useremail = document.getElementById('em').value
+            let UserPass = document.getElementById('pass').value
+            let email = sessionStorage.getItem("ema")
+            let password = sessionStorage.getItem("password");
+            
+            if(Useremail === email && UserPass === password)
+            {
+                alert("Login successfully")
+                window.open('./Amazon.html');
+            }
+
+            else
+            {
+                alert("Invalid email or password")
+            }
+            
+        })
+    </script>
+</body>
+</html>
